@@ -1,0 +1,67 @@
+
+<!---------------Navigation Bar-------------->
+<div class="nav_bar">
+    <div class="head_text">
+      <h1><i class="fas fa-scroll scroll_main"></i>{{title}}</h1>
+    </div>
+
+    <!-- login/registration -->
+    <div class="login_register">
+      <ul>
+        <li><a routerLink="/dashboard" routerLinkActive="active"><i class="fas fa-home"></i></a></li>
+
+        <li><a routerLink="/random" routerLinkActive="active"><i class="far fa-compass"></i></a></li>
+        <li><a routerLink="/signup" routerLinkActive="active"><i class="fas fa-comments"></i></a></li>
+        <li><a><i (click)="settings_clicked()" class="fas fa-cog"></i></a></li>
+        <li><i class="fas fa-power-off" (click)="logout()"></i></li>
+      </ul>
+    </div>
+
+    <!-- search -->
+    <div class="search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Scroll">
+
+    </div>
+</div>
+
+
+  <!---------------Post Dash -------------->
+
+  <div class="main_dash">
+
+    <div class="blog_contain">
+
+      <!-- card one -->
+      <div class="blog_card" *ngFor="let card of cards">
+
+        <div class="card_head">
+          <img class="post_profile_photo" src="{{ card.creator_icon }}" alt="">
+          <h3>{{card.creator_name}} <span>(22min ago)</span></h3>
+          <img class="img" src="../assets/img/travel.jpg" alt="">
+        </div>
+
+        <div class="card_contents">
+          <h2>{{card.title}}</h2>
+          <p>{{card.contents}}</p>
+        </div>
+
+        <div class="card_footer">
+
+            <i class="fas fa-scroll"></i>
+            <p>915</p>
+
+            <i class="far fa-comment-dots"></i>
+
+            <i class="fa fa-retweet" aria-hidden="true"></i>
+
+            <i class="fa fa-heart" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <!-- settings -->
+
+    <app-settings class="settingsStyle" *ngIf="settingsClick"></app-settings>
+    <!-- <app-settings></app-settings> -->
+
+  </div>

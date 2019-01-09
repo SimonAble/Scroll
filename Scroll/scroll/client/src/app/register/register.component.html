@@ -1,0 +1,82 @@
+<!---------------Navigation Bar-------------->
+<img class="imgb" src="../../assets/img/park.jpg" alt="">
+<div class="nav_bar">
+  <!-- search -->
+  <div class="search">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search Scroll">
+
+  </div>
+
+  <!-- login/registration -->
+  <div class="login_register">
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li class="about"><a href="">About</a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+
+<div class="page_head">
+
+  <h1><i class="fas fa-scroll scroll_main"></i>{{title}}</h1>
+  <div class="head_text">
+    <br>
+    <form (submit)="create()">
+      <p>Select your icon...</p>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/1.png" checked>
+        <img class="post_profile_photo" src="../assets/img/1.png" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/2.png">
+        <img class="post_profile_photo" src="../assets/img/2.png" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/3.png">
+        <img class="post_profile_photo" src="../assets/img/3.png" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/4.png">
+        <img class="post_profile_photo" src="../assets/img/4.png" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/5.png">
+        <img class="post_profile_photo" src="../assets/img/5.png" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/6.png">
+        <img class="post_profile_photo" src="../assets/img/6.png" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/7.png">
+        <img class="post_profile_photo" src="../assets/img/7.png" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/8.png">
+        <img class="post_profile_photo" src="../assets/img/8.png" alt="">
+      </label>
+      <input class="login_input" type="text" name="user.username" [(ngModel)]="user.username" placeholder="username">
+      <input class="login_input" type="text" name="user.email" [(ngModel)]="user.email" placeholder="email">
+      <input class="login_input" type="password" name="user.password" [(ngModel)]="user.password" placeholder="password">
+      <div class="error">
+        <p *ngIf="errors.icon">{{errors.icon.message}}</p>
+        <p *ngIf="errors.username">{{errors.username.message}}</p>
+        <p *ngIf="errors.email">{{errors.email.message}}</p>
+        <p *ngIf="errors.password">{{errors.password.message}}</p>
+        <p *ngIf="errors.repeat">{{errors.repeat.message}}</p>
+      </div>
+      <input class="submit" type="submit" value="Start Scrolling">
+    </form>
+  </div>
+
+
+</div>
+
+
+
+<!------------- End of Opening Page ------------->

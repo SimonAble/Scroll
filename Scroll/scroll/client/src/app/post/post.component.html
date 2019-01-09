@@ -1,0 +1,21 @@
+<div class="addpost">
+
+  <!---------- post form ----------->
+  <form (submit)="create()">
+
+      <!---------- Title ----------->
+      <input type="text" name="post.title" [(ngModel)]="post.title" class="form-control" placeholder="You title goes here">
+      <!---------- Errors----------->
+      <small *ngIf="errors.title" class="form-text text-muted">{{errors.title.message}}</small>
+
+      <!---------- Contents ----------->
+      <textarea name="post.contents" [(ngModel)]="post.contents" placeholder="Go ahead, tell us how you really feel!"></textarea>
+      <!---------- Errors ----------->
+      <small *ngIf="errors.contents" class="form-text text-muted">{{errors.content.message}}</small>
+
+      <!---------- Submit ----------->
+    <input type="submit" value="Add a Post" />
+
+  </form>
+</div>
+

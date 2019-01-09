@@ -1,0 +1,61 @@
+<div class="settingsBorder">
+  <form (submit)="updateSettings(user._id)">
+    <div>
+      <h3>Update your account:</h3>
+      <br>
+      <br>
+      <p>Select your icon: </p>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/1.png" checked>
+        <img class="post_profile_photo" src="../assets/img/1.png" num="1" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/2.png">
+        <img class="post_profile_photo" src="../assets/img/2.png" num="2" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/3.png">
+        <img class="post_profile_photo" src="../assets/img/3.png" num="3" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/4.png">
+        <img class="post_profile_photo" src="../assets/img/4.png" num="4" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/5.png">
+        <img class="post_profile_photo" src="../assets/img/5.png" num="5" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/6.png">
+        <img class="post_profile_photo" src="../assets/img/6.png" num="6" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/7.png">
+        <img class="post_profile_photo" src="../assets/img/7.png" num="7" alt="">
+      </label>
+      <label>
+        <input type="radio" name="user.icon" [(ngModel)]="user.icon" value="../assets/img/8.png">
+        <img class="post_profile_photo" src="../assets/img/8.png" num="8" alt="">
+      </label>
+
+      <br>
+      <br>
+      <p>username:</p>
+      <input class="login_input" type="text" name="user.username" [(ngModel)]="user.username" placeholder="username">
+      <p>email:</p>
+      <input class="login_input" type="text" name="user.email" [(ngModel)]="user.email" placeholder="email">
+      <p>password:</p>
+      <input class="login_input" type="password" name="user.password" [(ngModel)]="user.password" placeholder="password">
+      <div class="error">
+        <p *ngIf="errors.icon">{{errors.icon.message}}</p>
+        <p *ngIf="errors.username">{{errors.username.message}}</p>
+        <p *ngIf="errors.email">{{errors.email.message}}</p>
+        <p *ngIf="errors.password">{{errors.password.message}}</p>
+        <p *ngIf="errors.repeat">{{errors.repeat.message}}</p>
+      </div>
+    </div>
+
+    <input class="submit" type="submit" value="Save changes" />
+    <a [routerLink]="['/dashboard']"><input class="submit" type="submit" value="Cancel" /></a>
+  </form>
+</div>

@@ -1,0 +1,103 @@
+<!---------------Navigation Bar-------------->
+<div class="nav_bar">
+    <div class="head_text">
+      <h1><i class="fas fa-scroll scroll_main"></i>{{title}}</h1>
+    </div>
+
+    <!-- login/registration -->
+    <div class="login_register">
+      <ul>
+        <li><a routerLink="/dashboard" routerLinkActive="active"><i class="fas fa-home"></i></a></li>
+        <li><a routerLink="/random" routerLinkActive="active"><i class="far fa-compass"></i></a></li>
+        <li><a routerLink="/signup" routerLinkActive="active"><i class="fas fa-comments"></i></a></li>
+        <li><a><i (click)="settings_clicked()" class="fas fa-cog"></i></a></li>
+        <li><i class="fas fa-power-off" (click)="logout()"></i></li>
+      </ul>
+    </div>
+
+    <!-- search -->
+    <div class="search">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search Scroll">
+
+    </div>
+</div>
+
+
+  <!---------------Post Dash -------------->
+
+
+  <!-------------------------- Creating a post -------------------------->
+  <div class="main_dash">
+    <div class="add_post">
+        <i *ngIf="!add_post" (click)="add_post_clicked()" class="fas fa-plus"></i>
+        <i *ngIf="add_post" (click)="add_post_clicked()" class="fas fa-minus"></i>
+    </div>
+    <p *ngIf="!add_post" class="add_post_text">new post</p>
+
+    <div *ngIf="add_post" id="post_form">
+        <i (click)="link_click()" class="fas fa-link"></i>
+        <i (click)="image_click()" class="fas fa-images"></i>
+        <i (click)="text_click()" class="fas fa-font"></i>
+        <i (click)="video_click()" class="fab fa-youtube"></i>
+        <i (click)="music_click()" class="fas fa-headphones"></i>
+    </div>
+
+
+    <app-post *ngIf="add_post && add_postText"  class="post_form_contents"></app-post>
+
+    <!-- <app-upload *ngIf="add_postText"></app-upload> -->
+
+
+
+
+  <!-------------------------- Central Blog Posts -------------------------->
+
+    <div class="blog_contain">
+
+      <!-- card one -->
+      <div class="blog_card">
+
+        <!-- <p>Hello {{user.username}}!</p> -->
+        <!-- <p>{{user | json}}</p> -->
+
+      <div class="card_head">
+
+        <img class="post_profile_photo" src="../assets/img/sky.jpg" alt="">
+        <h3>SkiesTheLimit <span>(22min ago)</span></h3>
+        <img class="img" src="../assets/img/travel.jpg" alt="">
+      </div>
+
+      <div class="card_contents">
+        <h2>Sailing in Greece</h2>
+        <p>I can't believe how amazing this weekend has been. Good food, wine, and friends to share this incredible journey with. I can't wait to visit again...</p>
+      </div>
+
+      <div class="card_footer">
+
+          <i (click)="notes_clicked()" class="fas fa-scroll"></i>
+          <p>915</p>
+
+          <i (click)="comment_clicked()" class="far fa-comment-dots"></i>
+
+          <i (click)="reblog_clicked()" class="fa fa-retweet" aria-hidden="true"></i>
+
+          <i (click)="likes_clicked()" class="fa fa-heart" aria-hidden="true"></i>
+      </div>
+
+      <!-- *ngIf="opened_comment" -->
+      <div class="comment_contain">
+        <form (submit)="comment_post()">
+          <input class="comment_input" type="text" placeholder="Comment on x's post">
+          <input class="submit_comment" type="submit">
+        </form>
+      </div>
+    </div>
+
+    <!-- settings -->
+
+
+    <app-settings class="settingsStyle" *ngIf="settingsClick"></app-settings>
+    <!-- <app-settings></app-settings> -->
+
+  </div>
